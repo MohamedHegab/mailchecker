@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Mail Checker Service</h1>
+  <%= form_tag '/check', method: 'post', :class => '' do  %>
+    <div class="form-group">
+      <%= label_tag 'email', 'Email'%>
+      <%= text_field_tag :email, params[:email], class: 'form-control', autofocus: true, required: true %>
+    </div>
+    <%= submit_tag "Check!", class: 'btn btn-default btn-lg btn-submit' %>
+  <%end%>
+
+  <br />
+
+  <%= render_message(@response) %>
+</div>
